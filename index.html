@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Paul's cooking</title>
+  <meta name="description" content="the description">
+  <meta name="author" content="the content">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    async function loadContent(){
+      let response = await fetch( "https://raw.githubusercontent.com/paul-louyot/cooking/master/index.md" )
+      if ( response.ok ) {
+        let text = await response.text();
+        document.getElementById( 'content' ).innerHTML = marked( text );
+      }
+    }
+  </script>
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+</head>
+
+<body>
+  <div id="content"></div>
+</body>
+
+<script>
+  loadContent();
+</script>
+
+</html>
