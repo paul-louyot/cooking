@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     async function loadContent(){
-      let response = await fetch( "https://raw.githubusercontent.com/paul-louyot/cooking/master/index.md" )
+      let response = await fetch( "https://raw.githubusercontent.com/paul-louyot/cooking/master/content.md" )
       if ( response.ok ) {
         let text = await response.text();
         document.getElementById( 'content' ).innerHTML = marked( text );
